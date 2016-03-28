@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="GBK">
+	<title>Phaser</title>
+    <style>
+        body { margin: 0; background-color: #000}
+    </style>
+    <script src="phaser.min.js"></script>
+    <script src="Boot.js?1"></script>
+    <script src="Preloader.js?51"></script>
+    <script src="s1.js?1"></script>
+    <script src="s2.js?1"></script>
+    <!--<script src="s3.js"></script>
+    <script src="s4.js"></script>-->
+    <script src="s5.js?1"></script>
+    <script src="s6.js?1"></script>
+    <script src="s7.js?1"></script>
+    <script src="s8.js?1"></script>
+    <script src="s9.js?12"></script>
+</head>
+<body>
+
+<div id="video" style="position: absolute;width:640px;height:360px;display: none;left:50%;margin-left:-320px;top:20%;">
+    <video src="assets/video.mp4" width="640" height="360" controls autobuffer poster="assets/video.jpg"></video>
+</div>
+<div id="erweima" style="position: absolute;left:50%;margin-left:-150px;bottom:10%; display: none">
+    <img src="assets/erweima.png" width="300" height="304" alt="" />
+</div>
+
+
+<script>
+    var num = 100000;
+    (function() {
+        var game = new Phaser.Game(640, 1010, Phaser.CANVAS, 'game');
+        game.state.add('Boot', MyGame.Boot);
+        game.state.add('Preloader', MyGame.Preloader);
+        game.state.add('MainMenu', MyGame.MainMenu);
+        game.state.add('s1', MyGame.s1);
+        game.state.add('s2', MyGame.s2);
+        /*game.state.add('s3', MyGame.s3);
+        game.state.add('s4', MyGame.s4);*/
+        game.state.add('s5', MyGame.s5);
+        game.state.add('s6', MyGame.s6);
+        game.state.add('s7', MyGame.s7);
+        game.state.add('s8', MyGame.s8);
+        game.state.add('s9', MyGame.s9);
+        game.state.start('Boot');
+    })();
+</script>
+<script src="inpMusic.js"></script>
+</body>
+</html>
